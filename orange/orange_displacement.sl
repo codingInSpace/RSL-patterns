@@ -6,7 +6,6 @@ displacement orange_displacement(output varying float elevation = 0.0;) {
     elevation += 0.5/freq*(noise(P*4.0*freq)-0.5);
   }
 
-  //P = P + N * 0.05 * disp;
-  P += elevation * 0.05 * N;
+  P += elevation * 0.035 * N;
   N = calculatenormal(P);
 }
