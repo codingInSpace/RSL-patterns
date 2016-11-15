@@ -1,13 +1,12 @@
-displacement orange_displacement() {
-  float elevation = noise(2*P);
-  elevation += 0.5*(noise(4*P));
-  elevation += 0.25*(noise(8*P));
-  elevation += 0.125*(noise(16*P));
-  elevation += 0.0625*(noise(32*P));
-  elevation += 0.03125*(noise(64*P));
-  elevation += 0.015625*(noise(128*P));
-  elevation = max(elevation, 0.0); // Clip negative values to zero
+displacement orange_displacement(output varying float elevation = 0.0;) {
+  elevation = noise(0.6*P)-0.6;
 
-  P = P + N * 0.2 * elevation;
+  float freq;
+  for (freq=1.0; freq<2048.0; freq*=2.0) {
+    elevation += 0.5/freq*(noise(P*4.0*freq)-0.5);
+  }
+
+  //P = P + N * 0.05 * disp;
+  P += elevation * 0.05 * N;
   N = calculatenormal(P);
 }
