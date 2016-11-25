@@ -13,7 +13,7 @@ Identity
 LightSource "distantlight" 1
 
 # Camera transformation
-Translate 0 0 5
+Translate 0 0 15
 
 WorldBegin
 
@@ -27,8 +27,8 @@ AttributeBegin
   Surface "dragonscales_surface"
   Displacement "dragonscales_displacement"
   TransformBegin
-    Rotate 90 1 0 0   # Make +z point "up". The default camera coordinte system has +y up,
-    Sphere 1 -1 1 360 # but the Sphere primitive has its (u,v) poles on the z axis.
+    Rotate 50 1 0 0   
+    Torus 1.5 0.9 0.5 360 360   
   TransformEnd
 
 AttributeEnd
