@@ -23,14 +23,14 @@ displacement dragonscales_displacement(output varying float elevation = 0.0;) {
 	//float finsNoise = noise(P*2.0);
 	//float fins = 0.5 * mix(0.0, finsNoise, step(0.1, normalize(N) . normalize(vector(0.0, 0.0, 1.0))));
 
-	float finsTest = 0.0;
+	//float finsTest = 0.0;
 
-	float dotp = calculatenormal(P) . normalize(vector(0.0, 0.0, 1.0)); 
-	if (dotp > -0.2 && dotp < 0.2) {
-		finsTest = noise(2.0*P);
-		f = 1.0;
-	}
+	//float dotp = calculatenormal(P) . normalize(vector(0.0, 0.0, 1.0)); 
+	//if (dotp > -0.2 && dotp < 0.2) {
+	//	finsTest = noise(2.0*P);
+	//	f = 1.0;
+	//}
 
-  P += 3.0 * f * 0.01 * N + finsTest;
+  P += 3.0 * f * 0.01 * N;
   N = calculatenormal(P);
 }
