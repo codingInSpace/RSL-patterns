@@ -13,7 +13,7 @@ Identity
 LightSource "distantlight" 1
 
 # Camera transformation
-Translate 0 0 9 
+Translate 0 0 10 
 Rotate -8 1 0 0
 
 WorldBegin
