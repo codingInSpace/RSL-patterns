@@ -18,12 +18,10 @@ displacement dragonscales_displacement(output varying float elevation = 0.0;) {
 	fsmall = max(0.0, fsmall);
 
 	float f = max(fsmall, fbig);
-	float spikes = pow((1.0 - 2.0 * min(v, 1.0 - v)), 8.0);
-  if (spikes < 0.2) {
-  	spikes = 0.1;
-	}
 
-  //P += 3.0 * f * 0.01 * N;
+	float spikes = pow((1.0 - 2.0 * min(v, 1.0 - v)), 8.0);
+	spikes = max(0.1, spikes);
+
   P += 0.3 * f * N * spikes; 
   N = calculatenormal(P);
 }
