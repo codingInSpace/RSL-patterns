@@ -1,6 +1,6 @@
 #include "voronoi.sl"
 
-displacement dragonscales_displacement(output varying float elevation = 0.0;) {
+displacement dragonscales_displacement(output varying float spikes = 0.0;) {
 	// Cellular scales
 	point Ptex = transform("object", P);
 	float freq = 5.0;
@@ -19,9 +19,10 @@ displacement dragonscales_displacement(output varying float elevation = 0.0;) {
 
 	float f = max(fsmall, fbig);
 
-	float spikes = 1.2 * pow((1.0 - 2.0 * min(v, 1.0 - v)), 8.0);
+	spikes = 1.2 * pow((1.0 - 2.0 * min(v, 1.0 - v)), 8.0);
 	spikes = max(0.1, spikes);
 
+	float elevation;
 	elevation = noise(0.5*P)-0.5;
   float freq;
   for (freq=1.0; freq<4096.0; freq*=2.0) {

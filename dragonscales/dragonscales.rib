@@ -3,7 +3,7 @@
 FrameBegin 1
 
 Display "dragonscales.tif" "file" "rgba"
-Format 1024 768 -1
+Format 800 600 -1
 ShadingRate 1
 Projection "perspective" "fov" [30]
 FrameAspectRatio 1.33
